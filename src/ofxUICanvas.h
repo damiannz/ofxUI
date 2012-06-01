@@ -217,7 +217,14 @@ public:
                 XML->setValue("Value", textInput->getTextString(), 0);                 
             }
                 break;
-                                
+				
+            case OFX_UI_WIDGET_TEXTINPUT_IPHONE:
+            {
+                ofxUITextInputIphone *textInput = (ofxUITextInputIphone *) widget; 
+                XML->setValue("Value", textInput->getTextString(), 0);                 
+            }
+                break;
+				
             case OFX_UI_WIDGET_ROTARYSLIDER:
             {
                 ofxUIRotarySlider *rotslider = (ofxUIRotarySlider *) widget;
@@ -326,6 +333,14 @@ public:
             case OFX_UI_WIDGET_TEXTINPUT:
             {
                 ofxUITextInput *textInput = (ofxUITextInput *) widget; 
+                string value = XML->getValue("Value", textInput->getTextString(), 0);             
+                textInput->setTextString(value); 
+            }
+                break;                
+				
+            case OFX_UI_WIDGET_TEXTINPUT_IPHONE:
+            {
+                ofxUITextInputIphone *textInput = (ofxUITextInputIphone *) widget; 
                 string value = XML->getValue("Value", textInput->getTextString(), 0);             
                 textInput->setTextString(value); 
             }
@@ -478,6 +493,13 @@ public:
     #endif
             enableKeyEventCallbacks();
         }
+		
+		for(int i = widgets.size()-1; i >= 0; i--)
+		{
+			widgets[i]->enable(); 	
+		}
+		
+
 	}
 	
 	void disable()
@@ -494,6 +516,12 @@ public:
     #endif
             disableKeyEventCallbacks();
         }
+		
+		for(int i = widgets.size()-1; i >= 0; i--)
+		{
+			widgets[i]->disable(); 	
+		}
+
     }
 	
 	//App Callbacks
@@ -1199,6 +1227,10 @@ public:
                 widgetsWithState.push_back(t);             
 			}            
         }
+		else if(widget->getKind() == OFX_UI_WIDGET_TEXTINPUT_IPHONE)
+		{
+            widgetsWithState.push_back(widget);             
+		}
 		else if(widget->getKind() == OFX_UI_WIDGET_TEXTINPUT)
 		{
 			ofxUITextInput *textinput = (ofxUITextInput *) widget;

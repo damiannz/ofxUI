@@ -475,6 +475,10 @@ public:
     {
         return false; 
     }
+	
+	virtual void enable() {}
+	
+	virtual void disable() {}
     
 
 protected:    

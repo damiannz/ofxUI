@@ -90,7 +90,9 @@ enum ofxWidgetType
     OFX_UI_WIDGET_MULTIIMAGESLIDER_V = 33,
     OFX_UI_WIDGET_IMAGESLIDER_H = 34,
     OFX_UI_WIDGET_IMAGESLIDER_V = 35, 
-    OFX_UI_WIDGET_CUSTOMIMAGEBUTTON = 36
+    OFX_UI_WIDGET_CUSTOMIMAGEBUTTON = 36,
+	OFX_UI_WIDGET_TEXTINPUT_IPHONE = 13, 
+
 };
 
 enum ofxWidgetOrientation
@@ -184,6 +186,7 @@ enum ofxWidgetColorType
 #include "ofxUIMovingGraph.h"
 #include "ofxUIImage.h"
 #include "ofxUIImageSampler.h"
+#include "ofxUITextInputIphone.h"
 #include "ofxUICanvas.h"
 #include "ofxUIScrollableCanvas.h"
 
