@@ -37,7 +37,15 @@ void ofxUITextInputIphone::init(float w, string _name, string _textstring, int _
 	keyboard->setVisible(false);
 	keyboard->setBgColor(255, 255, 255, 255);
 	keyboard->setFontColor(0,0,0, 255);
-	keyboard->setFontSize(18);
+	int fontSize;
+	if ( _size == OFX_UI_FONT_SMALL )
+		fontSize = 12;
+	else if ( _size == OFX_UI_FONT_MEDIUM )
+		fontSize = 16;
+	else {
+		fontSize = 22;
+	}
+	keyboard->setFontSize(fontSize);
 	ofLogNotice("ofxUI", "iphone setting keyboard text to "+_textstring);
 	keyboard->setText(_textstring);
 	previousKeyboardText = keyboard->getText();

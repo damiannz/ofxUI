@@ -143,10 +143,10 @@ enum ofxWidgetColorType
 #define OFX_UI_FONT_NAME "GUI/NewMedia Fett.ttf"
 //#endif
 
-#define OFX_UI_FONT_RESOLUTION 150
-#define OFX_UI_FONT_LARGE_SIZE 10
-#define OFX_UI_FONT_MEDIUM_SIZE 8
-#define OFX_UI_FONT_SMALL_SIZE 6
+#define OFX_UI_FONT_RESOLUTION 72
+#define OFX_UI_FONT_LARGE_SIZE 20
+#define OFX_UI_FONT_MEDIUM_SIZE 16
+#define OFX_UI_FONT_SMALL_SIZE 12
 
 #define OFX_UI_LABEL_DRAW_BACK false
 
